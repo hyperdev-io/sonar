@@ -1,14 +1,14 @@
 # ICTU SonarQube Docker image
-A sonar image containing plugins and quality profiles used at ICTU
+A sonar image containing plugins and quality profiles used by HyperDev
 
 ## Running from docker hub
 
-    docker run -it -p 9000:9000 ictu/sonar
+    docker run -it -p 9000:9000 hyperdev/sonarqube
 
 ## Building and running locally
 
-    docker build . -t ictusonar
-    docker run -it -p 9000:9000 ictusonar
+    docker build . -t hyperdevsonarqube
+    docker run -it -p 9000:9000 hyperdevsonarqube
     browse to http://localhost:9000
 
 ## Running with MySQL via a docker composition
@@ -16,7 +16,7 @@ A sonar image containing plugins and quality profiles used at ICTU
 Use the following docker-compose file:
 
     www:
-        image: ictu/sonar:latest
+        image: hyperdev/sonarqube:latest
         environment:
             - SONARQUBE_JDBC_USERNAME=sonar
             - SONARQUBE_JDBC_PASSWORD=sonar-password
@@ -35,7 +35,7 @@ Use the following docker-compose file:
 
 > Note: Change the passwords above to your own secret value
 
-> Note: The docker images are built automatically when the code is updated in GitHub. This behaviour is configured at: https://hub.docker.com/r/ictu/sonar/~/settings/automated-builds/
+> Note: The docker images are built automatically when the code is updated in GitHub. This behaviour is configured at: https://hub.docker.com/r/hyperdev/sonarqube/~/settings/automated-builds/
 
 ## Adding plugins
 Add the url of the plugin to be installed to ```plugins/plugin-list```
